@@ -3,49 +3,40 @@
 //  чётных чисел в массиве.
 // [345, 897, 568, 234] -> 2
 
+
+
+using static System.Console;
+Clear();
+Write("Введите размер массива: ");
+int length=int.Parse(ReadLine()!);
+Write("Введите минимальное трехзначное значение массива: ");
+int min=int.Parse(ReadLine()!);
+Write("Введите максимальное трехзначное значение массива: ");
+int max=int.Parse(ReadLine()!);
+int[] Array= GetArray(length, min, max);
+WriteLine($"[{string.Join(", ", Array)}]");
+FindEven(Array);
+
 int[] GetArray(int size, int minValue, int maxValue)
 {
-int[] res = new int[size];
-for (int i = 0; i < size; i++)
+  Random rnd= new Random();
+  int[] result= new int[size];
+  for(int i= 0; i< result.Length; i++)
+  {
+    result[i] = rnd.Next(minValue, maxValue+ 1);
+  }
+  return result;
+}
+
+void FindEven(int[] MyArray)
 {
-res[i] = new Random().Next(minValue, maxValue + 1);
+ int even=0;
+ for(int i= 0; i< MyArray.Length; i++)
+ {
+  if(MyArray[i]%2==0)
+  {
+    even=even+1;
+ }
+ }
+ WriteLine($"Чётных чисел {even}");
 }
-return res;
-}
-
-void PrintArray(int[] inArray)
-{
-for (int i = 0; i < inArray.Length; i++)
-{
-Console.Write($"{inArray[i]} ");
-}
-}
-
-int[] GetSumEven(int[] inArray)
-{
-
-int[] result = new int [inArray.Length ];
-for (int i = 0; i < inArray.Length / 2; i++)
-{
-    
-  if(inArray [i] % 2 == 0)
-result= ;
-}
- return result;
-}
-
-int[] array = GetArray(10, 100, 999);
-PrintArray(array);
- System.Console.WriteLine();
- int[] resultArr = GetSumEven(array);
- PrintArray(resultArr);
-
-// for (int x = 0; x < numbers.Length; x++)
-// {
-// if (numbers[x] % 2 == 0)
-// count++;
-// }
-// Console.WriteLine($"из {numbers.Length} чисел, {count} четных");
-
-
-
