@@ -29,14 +29,12 @@ int[] GetArray(int size, int minValue, int maxValue)
 void FindEven(int[] MyArray)
 {
  int even=0;
- for(int i= 0; i< MyArray.Length; i++)
+ for(int i= 1; i< MyArray.Length; i+=2)
  {
-  if(MyArray[i]%2==1)
-  {
-int ASD = MyArray[i] % 2==1;
-     even=even+ ASD;
- }
+  
+      even=even+MyArray[i] ;
  }
  
- WriteLine($"Чётных чисел {even}");
+
+ WriteLine($"Сумма элементов на нечетных позициях: {even}");
 }
