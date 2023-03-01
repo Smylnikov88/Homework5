@@ -13,7 +13,7 @@ Write("Введите максимальное  значение массива:
 int max=int.Parse(ReadLine()!);
 int[] Array= GetArray(length, min, max);
 WriteLine($"[{string.Join(", ", Array)}]");
-FindEven(Array);
+SumOdd(Array);
 
 int[] GetArray(int size, int minValue, int maxValue)
 {
@@ -26,15 +26,13 @@ int[] GetArray(int size, int minValue, int maxValue)
   return result;
 }
 
-void FindEven(int[] MyArray)
+void SumOdd(int[] MyArray)
 {
- int even=0;
+ int odd=0;
  for(int i= 1; i< MyArray.Length; i+=2)
  {
-  
-      even=even+MyArray[i] ;
+      odd=odd+MyArray[i] ;
  }
  
-
- WriteLine($"Сумма элементов на нечетных позициях: {even}");
+ WriteLine($"Сумма элементов на нечетных позициях: {odd}");
 }
